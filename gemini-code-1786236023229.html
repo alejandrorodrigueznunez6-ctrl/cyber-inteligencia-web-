@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Desarrollo Cognitivo y Ciberseguridad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Hub de Inteligencia & Ciberseguridad</h1>
+    <p>Optimización cognitiva para estudiantes de preparatoria y protección digital</p>
+  </header>
+
+  <nav class="nav-bar">
+    <button onclick="scrollToSection('iq-section')">Aumento de IQ</button>
+    <button onclick="scrollToSection('iq-game')">Juego Cognitivo</button>
+    <button onclick="scrollToSection('cyber-section')">Ciberseguridad</button>
+    <button onclick="scrollToSection('cyber-activity')">Simulador Cyber</button>
+    <button onclick="scrollToSection('matrix-buttons')">Matriz de Desafíos (50+ Interacciones)</button>
+  </nav>
+
+  <main class="container">
+
+    <section id="iq-section" class="card">
+      <h2>🧠 ¿Cómo Aumentar Significativamente el IQ en la Preparatoria?</h2>
+      <p>
+        El Coeficiente Intelectual (IQ) mide habilidades como la resolución de problemas, el razonamiento lógico, la memoria de trabajo y la velocidad de procesamiento. Durante la preparatoria, el cerebro atraviesa una etapa clave de **mielinización y poda sináptica**, lo que significa que es el momento ideal para potenciar la <strong>inteligencia fluida</strong> mediante la <em>neuroplasticidad</em>.
+      </p>
+
+      <h3>Estrategias Probadas Científicamente:</h3>
+      <ul>
+        <li><strong>Memoria de Trabajo (Entrenamiento N-Back):</strong> Fortalece la corteza prefrontal aumentando la capacidad de mantener y manipular información activa.</li>
+        <li><strong>Aprendizaje Complejo:</strong> Aprender programación, matemáticas avanzadas o un nuevo idioma fuerza al cerebro a crear nuevas rutas neuronales.</li>
+        <li><strong>Lectura Crítica y Análisis:</strong> Cuestionar supuestos en lecturas científicas o filosóficas mejora la fluidez verbal y el razonamiento deductivo.</li>
+        <li><strong>Ejercicio Aeróbico:</strong> Promueve la liberación de BDNF (Factor Neurotrófico Derivado del Cerebro), estimulando la neurogénesis en el hipocampo.</li>
+      </ul>
+    </section>
+
+    <section id="iq-game" class="card highlight">
+      <h2>🎮 Actividad Cognitiva Funcional: Entrenamiento de Secuencia Espacial (Memoria de Trabajo)</h2>
+      <p>Instrucciones: Observa el patrón de luces que se enciende y repítelo en orden exacto. Cada nivel aumenta la secuencia, estimulando tu memoria operativa.</p>
+      
+      <div id="simon-board" class="simon-container">
+        <button class="simon-btn red" id="btn-0" onclick="userClick(0)"></button>
+        <button class="simon-btn blue" id="btn-1" onclick="userClick(1)"></button>
+        <button class="simon-btn green" id="btn-2" onclick="userClick(2)"></button>
+        <button class="simon-btn yellow" id="btn-3" onclick="userClick(3)"></button>
+      </div>
+
+      <div class="controls">
+        <button id="start-iq-btn" onclick="startIqGame()">Iniciar Entrenamiento IQ</button>
+        <span id="iq-score">Nivel: 0</span>
+      </div>
+      <p id="iq-status" class="status-text"></p>
+    </section>
+
+    <section id="cyber-section" class="card">
+      <h2>🛡️ ¿Qué es la Ciberseguridad y Cómo Funciona?</h2>
+      <p>
+        La ciberseguridad es la práctica de proteger sistemas, redes, dispositivos y datos frente a ataques digitales. En la era digital, comprenderla es vital para prevenir la suplantación de identidad, el robo de información y el acceso no autorizado.
+      </p>
+
+      <h3>Los Tres Pilares (Tríada CID):</h3>
+      <ul>
+        <li><strong>Confidencialidad:</strong> Garantizar que solo personas autorizadas accedan a los datos (ej. cifrado de mensajes).</li>
+        <li><strong>Integridad:</strong> Asegurar que la información no haya sido alterada o manipulada sin autorización.</li>
+        <li><strong>Disponibilidad:</strong> Mantener los sistemas y servicios operativos cuando los usuarios autorizados los necesiten.</li>
+      </ul>
+    </section>
+
+    <section id="cyber-activity" class="card highlight">
+      <h2>🔍 Actividad Interactiva de Ciberseguridad: Detector de Phishing</h2>
+      <p>Analiza el siguiente correo electrónico simulado y decide si es seguro o una amenaza de Phishing:</p>
+
+      <div class="email-box">
+        <p><strong>De:</strong> soporte@soport-paypal-security.com</p>
+        <p><strong>Asunto:</strong> URGENTE: Tu cuenta ha sido suspendida</p>
+        <p>Estimado usuario, detectamos un acceso no autorizado. Haz clic en el siguiente enlace para verificar tus credenciales o tu cuenta se cerrará permanentemente en 2 horas: <a href="#" onclick="return false;">http://bit.ly/3xP9qLk</a></p>
+      </div>
+
+      <div class="controls">
+        <button class="btn-danger" onclick="evaluatePhishing(true)">⚠️ Marcar como Phishing</button>
+        <button class="btn-success" onclick="evaluatePhishing(false)">✅ Marcar como Seguro</button>
+      </div>
+      <p id="cyber-result" class="status-text"></p>
+    </section>
+
+    <section id="matrix-buttons" class="card">
+      <h2>⚡ Matriz de Desafíos Rápidos y Micro-Aprendizaje (50+ Interacciones)</h2>
+      <p>Haz clic en los botones para resolver micro-desafíos lógicos, tips de ciberseguridad y ejercicios cerebrales instantáneos.</p>
+      
+      <div class="stats-panel">
+        <p>Desafíos completados: <span id="completed-count">0</span> / 52</p>
+      </div>
+
+      <div id="buttons-grid" class="grid-container">
+        </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Proyecto Integrador de Desarrollo Cognitivo y Ciberseguridad | Listo para GitHub Pages</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
